@@ -1,0 +1,15 @@
+﻿<Properties StartupConfiguration="{5F743C5A-5961-4406-83A9-3D97CB5FE4ED}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="improbable/generated/improbable/Coordinates.cs">
+    <Files>
+      <File FileName="improbable/generated/cell/IsAlive.cs" Line="14" Column="100" />
+      <File FileName="improbable/generated/improbable/Coordinates.cs" Line="32" Column="37" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|macOS64" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.CsharpWorker PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>
