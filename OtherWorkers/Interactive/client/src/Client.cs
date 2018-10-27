@@ -13,7 +13,7 @@ namespace Demo
 {
     class Client
     {
-        private const string ProjectName = "Demo";
+        private const string ProjectName = "beta_lithium_oscar_465";
         private const string WorkerType = "InteractiveClient";
         private const string LoggerName = "Client.cs";
         private const int ErrorExitStatus = 1;
@@ -27,7 +27,7 @@ namespace Demo
             new EntityId(2)
         };
 
-        private static readonly string[] WorkerAttributes = {"dice", "greetings"};
+        private static readonly string[] WorkerAttributes = {"lifeworker"};
 
         static int Main(string[] arguments)
         {
@@ -47,12 +47,6 @@ namespace Demo
             {
                 printUsage();
                 return ErrorExitStatus;
-            }
-
-            if (arguments.Length == 1)
-            {
-                SnapshotGenerator.GenerateSnapshot(arguments[0], WorkerAttributes);
-                return 0;
             }
 
             Console.WriteLine("Client Starting...");
