@@ -1,0 +1,7 @@
+// Copyright (c) Improbable Worlds Ltd, All Rights Reserved
+package cell;
+
+component IsAlive {
+  id = 103;
+  bool is_alive = 1;
+}
