@@ -1,5 +1,5 @@
 {
-  "workerType": "InteractiveClient",
+  "workerType": "SnapshotGenerator",
   "attributeSet": {
     "attributes": [
       "client"
