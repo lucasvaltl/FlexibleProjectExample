@@ -1,0 +1,9 @@
+{
+  "template": "small_loadbalancer_v2",
+  "runtimeFlags": [
+    {
+      "name": "bridge_soft_handover_enabled",
+      "value": "false"
+    }
+  ]
+}
