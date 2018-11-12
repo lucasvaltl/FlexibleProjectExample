@@ -22,9 +22,9 @@ namespace Demo
             var entityid = 0;
             using (var snapshotOutput = new SnapshotOutputStream(snapshotPath))
             {
-                for (var i = 0; i < 10; i++)
+                for (var i = 0; i < 1000; i++)
                 {  
-                    for (int j = 0; j < 10; j++)
+                    for (int j = 0; j < 1000; j++)
                     {
                         Console.WriteLine(String.Format("hellu"));
                         var entityId = new EntityId(++entityid);

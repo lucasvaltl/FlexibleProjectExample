@@ -1,7 +1,10 @@
 // Copyright (c) Improbable Worlds Ltd, All Rights Reserved
 
 using System;
+using System.IO.MemoryMappedFiles;
 using System.Reflection;
+using System.Runtime.CompilerServices;
+using Improbable;
 using Improbable.Worker;
 
 namespace Demo
@@ -38,17 +41,17 @@ namespace Demo
             Console.WriteLine("Worker Starting...");
             using (var connection = ConnectWorker(arguments))
             {
-                using (var dispatcher = new Dispatcher())
+                using (var view = new View())
                 {
                     var isConnected = true;
 
-                    dispatcher.OnDisconnect(op =>
+                    view.OnDisconnect(op =>
                     {
                         Console.Error.WriteLine("[disconnect] {0}", op.Reason);
                         isConnected = false;
                     });
 
-                    dispatcher.OnLogMessage(op =>
+                    view.OnLogMessage(op =>
                     {
                         connection.SendLogMessage(op.Level, LoggerName, op.Message);
                         Console.WriteLine("Log Message: {0}", op.Message);
@@ -59,7 +62,7 @@ namespace Demo
                         }
                     });
 
-                    dispatcher.OnCommandRequest<PingResponder.Commands.Ping>(request =>
+                    view.OnCommandRequest<PingResponder.Commands.Ping>(request =>
                     {
                         connection.SendLogMessage(LogLevel.Info, LoggerName, "Received GetWorkerType command");
 
@@ -75,12 +78,15 @@ namespace Demo
                     {
                         using (var opList = connection.GetOpList(GetOpListTimeoutInMilliseconds))
                         {
-                            dispatcher.Process(opList);
+                            view.Process(opList);
                         }
+                        
+                        connection.SendLogMessage(LogLevel.Info, LoggerName, view.Entities.Count.ToString());
+                        
                     }
                 }
             }
-
+        
             return 0;
         }
 

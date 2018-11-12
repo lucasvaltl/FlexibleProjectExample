@@ -8,7 +8,7 @@
         {
             "layer": "lifeworker",
             "hex_grid": {
-                "num_workers": 4
+                "num_workers": 1
             }
         }
     ]
